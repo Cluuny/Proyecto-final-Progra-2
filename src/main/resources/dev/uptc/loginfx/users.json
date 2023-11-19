@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "username": "root",
+      "password": "root2023",
+      "roll": "Administrador"
+    },
+    {
+      "username": "docente",
+      "password": "dov1234",
+      "roll": "Docente"
+    },
+    {
+      "username": "estudiante",
+      "password": "est1234",
+      "roll": "Estudiante"
+    },
+    {
+      "username": "invitado",
+      "password": "inv123",
+      "roll": "Invitado"
+    }
+  ]
+}

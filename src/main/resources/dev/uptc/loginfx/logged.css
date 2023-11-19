@@ -1,0 +1,28 @@
+.root {
+    -fx-background-color: #f4f4f4; /* Color de fondo */
+}
+
+.label-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.image-view {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+}
+
+.button-list {
+    -fx-spacing: 10; /* Espacio entre botones */
+}
+
+.button {
+    -fx-background-color: #4CAF50; /* Color de fondo */
+    -fx-text-fill: white; /* Color de texto */
+    -fx-font-size: 14px;
+    -fx-padding: 8px 12px;
+    -fx-end-margin: 12px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Cambiar color al pasar el mouse */
+}

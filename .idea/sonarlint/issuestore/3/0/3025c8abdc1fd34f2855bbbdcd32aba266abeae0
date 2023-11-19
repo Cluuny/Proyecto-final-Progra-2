@@ -1,0 +1,16 @@
+
+t
+java:S1192‡"QDefine a constant instead of duplicating this literal "squarecalculator" 4 times.(Ì ş•ÿÿÿÿÿ8ßöÑŸ¾1
+f
+java:S1192#"IDefine a constant instead of duplicating this literal "user.dir" 6 times.(ÿ›É½8òÜÍŸ¾1
+l
+java:S1192$"JDefine a constant instead of duplicating this literal "resources" 6 times.(Ö˜ºêşÿÿÿÿ8óÜÍŸ¾1
+j
+java:S1192&"HDefine a constant instead of duplicating this literal "loginfx" 6 times.(‘²Á­ùÿÿÿÿ8óÜÍŸ¾1
+o
+java:S2095™"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(†áûÿÿÿÿ8˜ë¼Ÿ¾1
+j
+java:S2095ˆ"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ğ­Ï8˜ë¼Ÿ¾1
+M	java:S106"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8‰÷ÃŸ¾1
+M	java:S106²"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8ÔŒÌŸ¾1
+M	java:S106É"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8„©ÒŸ¾1

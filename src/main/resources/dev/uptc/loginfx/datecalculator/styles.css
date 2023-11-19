@@ -1,0 +1,20 @@
+.main-container {
+    -fx-background-color: white;    /*color de fondo del contenedor*/
+    -fx-alignment: center;  /* Centra el contenido dentro del contenedor*/
+    -fx-spacing: 10;  /* Establece un espacio de 10 unidades entre elementos hijos*/
+    -fx-padding: 20;  /* Agrega un relleno interno de 20 unidades al contenedor*/
+}
+
+.result-list {
+    -fx-pref-width: 200;  /* Establece un ancho preferido de 200 unidades para el componente*/
+    -fx-pref-height: 200;  /* Establece una altura preferida de 200 unidades para el componente*/
+}
+
+.result-list-item {
+    -fx-padding: 5;  /* Agrega un relleno interno de 5 unidades a los elementos de la lista*/
+}
+.button {
+    -fx-background-color: #4CAF50;  /* color de fondo de los botones verde  */
+    -fx-text-fill: white;           /* Texto en color blanco */
+    -fx-pref-width: 150;            /*ancho preferido de los botones en 150 píxeles*/
+}

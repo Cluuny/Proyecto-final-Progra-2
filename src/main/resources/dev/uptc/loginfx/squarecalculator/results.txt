@@ -1,0 +1,2 @@
+El cuadrado de 2.0 es 4.0
+El cuadrado de 23.0 es 529.0
