@@ -1,6 +1,7 @@
 package dev.uptc.loginfx.views;
 
 import dev.uptc.loginfx.model.User;
+import dev.uptc.loginfx.presenter.PersonRegistrationPresenter;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -27,8 +28,8 @@ public class LoggedWindow extends Application {
         this.toolList.put("Calculadora de cuadrados", new SquareView());
         this.toolList.put("Calculadora de Fechas Futuras", new DateCalculatorView());
         this.toolList.put("Notepad", new NotepadView());
-        this.toolList.put("CRUD Holding", new SquareView());
-        this.toolList.put("Registro de Personas", new SquareView());
+        this.toolList.put("CRUD Holding", new CrudHoldingApp());
+        this.toolList.put("Registro de Personas", new PersonRegistrationPresenter());
     }
 
     @Override

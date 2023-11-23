@@ -48,7 +48,11 @@ public class LoginPresenter extends Application {
             User user = loginModel.handleLogin(userName, password);
             if (user != null) {
                 this.stage.close();
-                this.openMenu(user);
+                try {
+                    this.openMenu(user);
+                }catch (Exception e){
+                    loginWindow.showAlert(e.getMessage());
+                }
             } else {
                 throw new BadCredentialsException();
             }
@@ -58,10 +62,10 @@ public class LoginPresenter extends Application {
 
     }
 
-    private void openMenu(User user) {
+    private void openMenu(User user) throws Exception{
         if (this.loginModel.getSupportedRoles().contains(user.getRole())) {
-            LoggedWindow loggedWindow = new LoggedWindow(user);
-            loggedWindow.start(this.stage);
+            LoggedPresenter loggedPresenter = new LoggedPresenter(user);
+            loggedPresenter.start(this.stage);
         }
     }
 }
