@@ -20,7 +20,7 @@ public class CrudHoldingApp extends Application {
     private ObservableList<Departamento> departamentoList = FXCollections.observableArrayList();
     private ObservableList<Empleado> empleadoList = FXCollections.observableArrayList();
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/javafxdbp2";
+    private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/javafxdbp2";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
     private Connection dbConnection;
