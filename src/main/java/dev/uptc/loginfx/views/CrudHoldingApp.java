@@ -100,93 +100,100 @@ public class CrudHoldingApp extends Application {
             }
         });
 
-//BOTONES:
-        Button agregarEmpresaButton = new Button("Agregar Empresa");
-        agregarEmpresaButton.setOnAction(e -> agregarEmpresa());
+        MenuBar menuBar = new MenuBar();
 
-        Button agregarSedeButton = new Button("Agregar Sede");
-        agregarSedeButton.setOnAction(e -> agregarSede());
+        // Men� de Empresas
+        Menu enterpriseMenu = new Menu("Empresas");
+        MenuItem addEnterpriseMenuItem = new MenuItem("Agregar Empresa");
+        MenuItem updateEnterpriseMenuItem = new MenuItem("Modificar Empresa");
+        MenuItem deleteEnterpriseMenuItem = new MenuItem("Borrar Empresa");
 
-        Button agregarDepartamentoButton = new Button("Agregar Departamento");
-        agregarDepartamentoButton.setOnAction(e -> agregarDepartamento());
+        addEnterpriseMenuItem.setOnAction(e -> agregarEmpresa());
 
-        Button agregarEmpleadoButton = new Button("Agregar Empleado");
-        agregarEmpleadoButton.setOnAction(e -> agregarEmpleado());
-
-///// botones eliminar:
-        Button eliminarEmpleadoButton = new Button("Eliminar Empleado");
-        eliminarEmpleadoButton.setOnAction(e -> {
-            Empleado empleadoSeleccionado = empleadoListView.getSelectionModel().getSelectedItem();
-            eliminarEmpleado(empleadoSeleccionado);
+        updateEnterpriseMenuItem.setOnAction(e -> {
+            Empresa selectedEnterprise = empresaListView.getSelectionModel().getSelectedItem();
+            modificarEmpresa(selectedEnterprise);
         });
 
-        Button eliminarDepartamentoButton = new Button("Eliminar Departamento");
-        eliminarDepartamentoButton.setOnAction(e -> {
-            Departamento departamentoSeleccionado = departamentoListView.getSelectionModel().getSelectedItem();
-            eliminarDepartamento(departamentoSeleccionado);
+        deleteEnterpriseMenuItem.setOnAction(e -> {
+            Empresa selectedEnterprise = empresaListView.getSelectionModel().getSelectedItem();
+            eliminarEmpresa(selectedEnterprise);
         });
 
-        Button eliminarSedeButton = new Button("Eliminar Sede");
-        eliminarSedeButton.setOnAction(e -> {
-            Sede sedeSeleccionada = sedeListView.getSelectionModel().getSelectedItem();
-            eliminarSede(sedeSeleccionada);
+        enterpriseMenu.getItems().addAll(addEnterpriseMenuItem, updateEnterpriseMenuItem, deleteEnterpriseMenuItem);
+
+        // Men� de Sedes
+        Menu campusMenu = new Menu("Sedes");
+        MenuItem addCampusMenuItem = new MenuItem("Agregar Sede");
+        MenuItem updateCampusMenuItem = new MenuItem("Modificar Sede");
+        MenuItem deleteCampusMenuItem = new MenuItem("Borrar Sede");
+
+        addCampusMenuItem.setOnAction(e -> agregarSede());
+
+        updateCampusMenuItem.setOnAction(e -> {
+            Sede selectedCampus = sedeListView.getSelectionModel().getSelectedItem();
+            modificarSede(selectedCampus);
         });
 
-        Button eliminarEmpresaButton = new Button("Eliminar Empresa");
-        eliminarEmpresaButton.setOnAction(e -> {
-            Empresa empresaSeleccionada = empresaListView.getSelectionModel().getSelectedItem();
-            eliminarEmpresa(empresaSeleccionada);
-        });
-//botones modificar update:
-        Button modificarEmpleadoButton = new Button("Modificar Empleado");
-        modificarEmpleadoButton.setOnAction(e -> {
-            Empleado empleadoSeleccionado = empleadoListView.getSelectionModel().getSelectedItem();
-            modificarEmpleado(empleadoSeleccionado);
+        deleteCampusMenuItem.setOnAction(e -> {
+            Sede selectedCampus = sedeListView.getSelectionModel().getSelectedItem();
+            eliminarSede(selectedCampus);
         });
 
-        Button modificarDepartamentoButton = new Button("Modificar Departamento");
-        modificarDepartamentoButton.setOnAction(e -> {
-            Departamento departamentoSeleccionado = departamentoListView.getSelectionModel().getSelectedItem();
-            modificarDepartamento(departamentoSeleccionado);
+        campusMenu.getItems().addAll(addCampusMenuItem, updateCampusMenuItem, deleteCampusMenuItem);
+
+        //Menu de Departamentos
+        Menu departmentMenu = new Menu("Departamentos");
+        MenuItem addDepartmentMenuItem = new MenuItem("Agregar Departamento");
+        MenuItem updateDepartmentMenuItem = new MenuItem("Modificar Departamento");
+        MenuItem deleteDepartmentMenuItem = new MenuItem("Borrar Departamento");
+
+        addDepartmentMenuItem.setOnAction(e -> agregarDepartamento());
+
+        updateDepartmentMenuItem.setOnAction(e -> {
+            Departamento selectedDepartment = departamentoListView.getSelectionModel().getSelectedItem();
+            modificarDepartamento(selectedDepartment);
         });
 
-        Button modificarSedeButton = new Button("Modificar Sede");
-        modificarSedeButton.setOnAction(e -> {
-            Sede sedeSeleccionada = sedeListView.getSelectionModel().getSelectedItem();
-            modificarSede(sedeSeleccionada);
+        deleteDepartmentMenuItem.setOnAction(e -> {
+            Departamento selectedDepartment = departamentoListView.getSelectionModel().getSelectedItem();
+            eliminarDepartamento(selectedDepartment);
         });
 
-        Button modificarEmpresaButton = new Button("Modificar Empresa");
-        modificarEmpresaButton.setOnAction(e -> {
-            Empresa empresaSeleccionada = empresaListView.getSelectionModel().getSelectedItem();
-            modificarEmpresa(empresaSeleccionada);
+        departmentMenu.getItems().addAll(addDepartmentMenuItem, updateDepartmentMenuItem, deleteDepartmentMenuItem);
+
+        //Menu de Empleados
+        Menu employeeMenu = new Menu("Empleados");
+        MenuItem addEmployeeMenuItem = new MenuItem("Agregar Empleados");
+        MenuItem updateEmployeeMenuItem = new MenuItem("Modificar Empleados");
+        MenuItem deleteEmployeeMenuItem = new MenuItem("Borrar Empleados");
+
+        addEmployeeMenuItem.setOnAction(e -> agregarEmpleado());
+
+        updateEmployeeMenuItem.setOnAction(e -> {
+            Empleado selectedEmployee = empleadoListView.getSelectionModel().getSelectedItem();
+            modificarEmpleado(selectedEmployee);
         });
 
-        HBox buttonBox_empresa = new HBox(agregarEmpresaButton, modificarEmpresaButton, eliminarEmpresaButton);
-        buttonBox_empresa.setSpacing(10);
+        deleteEmployeeMenuItem.setOnAction(e -> {
+            Empleado selectedEmployee = empleadoListView.getSelectionModel().getSelectedItem();
+            eliminarEmpleado(selectedEmployee);
+        });
 
-        HBox buttonBox_sede = new HBox(agregarSedeButton, modificarSedeButton, eliminarSedeButton);
-        buttonBox_sede.setSpacing(10);
+        employeeMenu.getItems().addAll(addEmployeeMenuItem, updateEmployeeMenuItem, deleteEmployeeMenuItem);
 
-        HBox buttonBox_departamento = new HBox(agregarDepartamentoButton, modificarDepartamentoButton, eliminarDepartamentoButton);
-        buttonBox_departamento.setSpacing(10);
-
-        HBox buttonBox_empleado = new HBox(agregarEmpleadoButton, modificarEmpleadoButton, eliminarEmpleadoButton);
-        buttonBox_empleado.setSpacing(10);
+        menuBar.getMenus().addAll(enterpriseMenu, campusMenu, departmentMenu, employeeMenu);
 
         VBox vbox = new VBox(
+                menuBar,
                 empresaLabel,
                 empresaListView,
-                buttonBox_empresa,
                 sedeLabel,
                 sedeListView,
-                buttonBox_sede,
                 departamentoLabel,
                 departamentoListView,
-                buttonBox_departamento,
                 empleadoLabel,
-                empleadoListView,
-                buttonBox_empleado
+                empleadoListView
         );
         vbox.setSpacing(10);
         vbox.setPadding(new Insets(10));
